@@ -1,13 +1,13 @@
 ### Test de la route GET /
-GET http://127.0.0.1:8000/
+GET http://127.0.0.1:8001/
 ###
 
 ### Test de la route GET /miscellaneous/addition avec des paramètres query
-GET http://127.0.0.1:8000/miscellaneous/addition?a=5&b=10
+GET http://127.0.0.1:8001/miscellaneous/addition?a=5&b=10
 ###
 
 ### Création d'un utilisateur via POST /users
-POST http://127.0.0.1:8000/users
+POST http://127.0.0.1:8001/users
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 ###
 
 ### Obtenir un token d'authentification via POST /token
-POST http://127.0.0.1:8000/token
+POST http://127.0.0.1:8001/token
 Content-Type: application/x-www-form-urlencoded
 
 username=testuser&password=testpassword
@@ -26,12 +26,12 @@ username=testuser&password=testpassword
 ### --- Copiez le token d'accès reçu ci-dessus et remplacez {{access_token}} dans les requêtes suivantes ---
 
 ### Récupérer les informations de l'utilisateur authentifié via GET /users/me
-GET http://127.0.0.1:8000/users/me
+GET http://127.0.0.1:8001/users/me
 Authorization: Bearer {{access_token}}
 ###
 
 ### Ajouter une tâche TODO via POST /users/me/todo
-POST http://127.0.0.1:8000/users/me/todo
+POST http://127.0.0.1:8001/users/me/todo
 Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
@@ -43,7 +43,7 @@ Content-Type: application/json
 ###
 
 ### Ajouter une seconde tâche TODO via POST /users/me/todo
-POST http://127.0.0.1:8000/users/me/todo
+POST http://127.0.0.1:8001/users/me/todo
 Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
@@ -55,5 +55,5 @@ Content-Type: application/json
 ###
 
 ### Récupérer toutes les tâches triées par priorité via GET /users/me/todo
-GET http://127.0.0.1:8000/users/me/todo
+GET http://127.0.0.1:8001/users/me/todo
 Authorization: Bearer {{access_token}}
